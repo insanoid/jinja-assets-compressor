@@ -178,7 +178,7 @@ class Compressor(object):
             if tag.get('type') is None:
                 if tag.name == 'script':
                     tag['type'] = 'text/javascript'
-                if tag.name == 'style':
+                if tag.name == 'style' or tag.get('rel') == 'stylesheet':
                     tag['type'] = 'text/css'
             else:
                 tag['type'] = tag['type'].lower()
